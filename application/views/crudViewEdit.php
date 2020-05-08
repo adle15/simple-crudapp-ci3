@@ -11,6 +11,10 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-primary">
+    <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
+    </nav>
+    <br></br>
     <div class="container">
         <form method="post" action="<?php echo site_url('crudController/update')?>/<?php echo $row->id; ?>">
             <div class="form-group">
