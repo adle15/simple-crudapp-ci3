@@ -30,13 +30,27 @@ class CrudController extends CI_Controller {
     }
 
     public function create(){
-        $this->CrudModel->createData();
-        redirect("CrudController/form");
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('namalengkap','Nama Lengkap','required');
+        $this->form_validation->set_rules('NIM','Nomor Induk Mahasiswa','required');
+        $this->form_validation->set_rules('no_telp','No Handphone','required');
+
+        if ($this->form_validation->run() == FALSE){
+
+            $this->load->view('CrudViewForm');
+        }
+
+        else{
+            
+            $this->CrudModel->createData();
+            redirect("CrudController");
+        }
     }
 
 	public function index()
 	{
-		$this->load->view('CrudViewForm');
+        $this->load->view('CrudViewForm');
 	}
     
 }

@@ -39,6 +39,7 @@
                 <?php } ?>
             </tbody>
     </table>
+    <a class="btn btn-warning" href="<?php echo site_url('CrudController');?>" >Tambah Data Lainnya</a>
     </div>
   </body>
 </html>

@@ -16,13 +16,14 @@
     </nav>
     <br></br>
     <div class="container">
+      <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
       <form method="post" action="<?php echo site_url('CrudController/create')?>">
         <div class="form-group">
           <label for="exampleInputEmail1">Nama Lengkap</label>
           <input type="text" class="form-control" name="namalengkap">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">NIM</label>
+          <label for="exampleInputEmail1">Nomer Induk Mahasiswa</label>
           <input type="number" class="form-control" name="NIM">
         </div>
         <div class="form-group">
@@ -31,6 +32,8 @@
         </div>
         <button type="submit" class="btn btn-primary" value="save">Submit</button>
       </form>
+      <br></br>
+      <a class="btn btn-warning" href="<?php echo site_url('CrudController/data');?>" >Lihat Data</a>
     </div>
   </body>
 </html>
