@@ -16,7 +16,7 @@
     </nav>
     <br></br>
     <div class="container">
-        <form method="post" action="<?php echo site_url('crudController/update')?>/<?php echo $row->id; ?>">
+        <form method="post" action="<?php echo site_url('CrudController/update')?>/<?php echo $row->id; ?>">
             <div class="form-group">
             <label for="exampleInputEmail1">Nama Lengkap</label>
             <input type="text" class="form-control" name="namalengkap" value="<?php echo $row->namalengkap; ?>">

@@ -1,25 +1,42 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class crudController extends CI_Controller {
+class CrudController extends CI_Controller {
 
     public function __construct(){
         parent:: __construct();
-        $this->load->model('crudModel');
+        $this->load->model('CrudModel');
+    }
+
+	public function data()
+	{
+        $data['result'] = $this->CrudModel->getAllData();
+		$this->load->view('CrudView', $data);
+    }
+
+    public function edit($id){
+        $data['row'] = $this->CrudModel->getData($id);
+        $this->load->view('CrudViewEdit',$data);
+    }
+
+    public function update($id){
+        $this->CrudModel->updateData($id);
+        redirect('CrudController/data');
+    }
+
+    public function delete($id){
+        $this->CrudModel->deleteData($id);
+        redirect('CrudController/data');
+    }
+
+    public function create(){
+        $this->CrudModel->createData();
+        redirect("CrudController/form");
     }
 
 	public function index()
 	{
-        $data['result'] = $this->crudModel->getAllData();
-		$this->load->view('crudView', $data);
-    }
-
-    public function edit($id){
-        $data['row'] = $this->crudModel->getData($id);
-        $this->load->view('crudViewEdit',$data);
-    }
-
-    public function update($id){
-        $this->crudModel->updateData($id);
-    }
+		$this->load->view('CrudViewForm');
+	}
+    
 }

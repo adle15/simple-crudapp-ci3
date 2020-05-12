@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class crudModel extends CI_Model {
+class CrudModel extends CI_Model {
     public function __construct(){
         $this->load->database();
     }
@@ -33,6 +33,11 @@ class crudModel extends CI_Model {
         );
         $this->db->where('id', $id);
         $this->db->update('biodata',$data);
+    }
+
+    function deleteData($id){
+        $this->db->where('id', $id);
+        $this->db->delete('biodata');
     }
 
 }

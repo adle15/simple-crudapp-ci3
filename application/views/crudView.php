@@ -33,7 +33,8 @@
                 <td><?php echo $row->namalengkap; ?></td>
                 <td><?php echo $row->NIM; ?></td>
                 <td><?php echo $row->no_telp; ?></td>
-                <td><a class="btn btn-primary btn-sm" href="<?php echo site_url('crudController/edit');?>/<?php echo $row->id;?>" role="button">Edit</a> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+                <td><a class="btn btn-primary btn-sm" href="<?php echo site_url('CrudController/edit');?>/<?php echo $row->id;?>" role="button">Edit</a> 
+                <a class ="btn btn-danger btn-sm" href="<?php echo site_url('CrudController/delete');?>/<?php echo $row->id;?>">Delete</a></td>
                 </tr>
                 <?php } ?>
             </tbody>
