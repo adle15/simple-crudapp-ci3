@@ -17,6 +17,7 @@
     <br></br>
     <div class="container">
       <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+      <?php echo $this->session->flashdata('msg'); ?>
       <form method="post" action="<?php echo site_url('CrudController/create')?>">
         <div class="form-group">
           <label for="exampleInputEmail1">Nama Lengkap</label>

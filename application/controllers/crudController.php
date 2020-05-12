@@ -44,6 +44,7 @@ class CrudController extends CI_Controller {
         else{
             
             $this->CrudModel->createData();
+            $this->session->set_flashdata('msg','<div class="alert alert-sucess">Berhasil Menambah Data</div>');
             redirect("CrudController");
         }
     }
