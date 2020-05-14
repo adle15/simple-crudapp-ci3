@@ -105,7 +105,7 @@ class CrudController extends CI_Controller {
     public function regist(){
         $this->form_validation->set_rules('email','Email','required');
         $this->form_validation->set_rules('nim','Nomor Induk Mahasiswa','required');
-        $this->form_validation->set_rules('namalengkap','Nama Lengkap','required');
+        $this->form_validation->set_rules('nama','Nama Lengkap','required');
         $this->form_validation->set_rules('password','Password','required');
 
         if ($this->form_validation->run() == FALSE){
@@ -117,7 +117,7 @@ class CrudController extends CI_Controller {
             
             $this->CrudModel->createDatauser();
             $this->session->set_flashdata('msg','<div class="alert alert-success">Berhasil Registrasi</div>');
-            redirect("CrudController");
+            redirect("CrudController/register");
         }
     }
     

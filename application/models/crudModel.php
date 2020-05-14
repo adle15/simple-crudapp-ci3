@@ -42,10 +42,10 @@ class CrudModel extends CI_Model {
 
     function createDatauser(){
         $data = array (
-            'email' => $this->input->post('namalengkap'),
-            'nim' => $this->input->post('NIM'),
-            'namalengkap' => $this->input->post('no_telp'),
-            'password' => $this->input->post('no_telp')
+            'email' => $this->input->post('email'),
+            'nim' => $this->input->post('nim'),
+            'nama' => $this->input->post('nama'),
+            'password' => $this->input->post('password')
         );
         $this->db->insert('user', $data);
     }
