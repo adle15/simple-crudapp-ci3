@@ -40,14 +40,13 @@ class CrudModel extends CI_Model {
         $this->db->delete('biodata');
     }
 
-    function login($email,$password){
-        $periksa=$this->db->get_where('user',array('email'=>$email,'password'=>sha1($password)));
-
-        if($periksa->num_row>0){
-            return 1;
-        }else{
-            return 0;
-        }
+    function createDatauser(){
+        $data = array (
+            'email' => $this->input->post('namalengkap'),
+            'nim' => $this->input->post('NIM'),
+            'namalengkap' => $this->input->post('no_telp'),
+            'password' => $this->input->post('no_telp')
+        );
+        $this->db->insert('user', $data);
     }
-
 }
