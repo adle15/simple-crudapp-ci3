@@ -20,7 +20,7 @@
           Welcome User
         </span>
         <br></br>
-        <a class="btn btn-danger btn-sm" href="<?php base_url('CrudController/logout') ?>">Logout</a>
+        <a href="<?= base_url('CrudController/logout')?>" class="btn btn-danger btn-sm">Logout</a>
       </div>
     </nav>
     <br></br>
