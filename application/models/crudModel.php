@@ -40,5 +40,14 @@ class CrudModel extends CI_Model {
         $this->db->delete('biodata');
     }
 
-    
+    function login($email,$password){
+        $periksa=$this->db->get_where('user',array('email'=>$email,'password'=>sha1($password)));
+
+        if($periksa->num_row>0){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
 }

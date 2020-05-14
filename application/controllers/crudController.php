@@ -58,6 +58,46 @@ class CrudController extends CI_Controller {
         $this->load->view('login');
     }
 
+    function auth(){
+        $this->form_validation->set_rules('email','Email','required|valid_email');
+        $this->form_validation->set_rules('password','Password','required');
+
+        if($this->form_validation->run()==FALSE){
+            $this->load->view('login');
+        }
+
+        else{
+            $email  =   $this->input->post('email');
+            $password   =   $this->input->post('password');
+            $auth   =   $this->db->get_where('user',['email'=> $email])->row_array();
+            if($auth){
+                if($password==$auth['password']){
+                    $data=[
+                        'email' => $auth['email'],
+                    ];
+                    $this->session->set_userdata($data);
+                    $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Your Already Login</div>');
+                    redirect('CrudController/data');
+                }
+                else{
+                    $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert">Password Invalid</div>');
+                    redirect('CrudController/login');
+                }
+            }else{
+                $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Email not Registered</div>');
+                redirect('CrudController/login');
+            }
+
+        }
+
+    }
+
+    function logout(){
+        $this->session->unset_userdata('email');
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Successfully Logout</div>');
+        redirect('CrudController/login');
+    }
+
     public function register(){
         $this->load->view('register');
     }

@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
-      <a class="btn btn-primary" href="<?php echo site_url('CrudController/login')?>" role="button">Login</a>
+      <a class="btn btn-danger" href="<?php echo site_url('CrudController/login')?>" role="button">Login</a>
     </nav>
     <br></br>
     <div class="container">
