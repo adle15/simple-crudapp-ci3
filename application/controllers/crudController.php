@@ -44,7 +44,7 @@ class CrudController extends CI_Controller {
         else{
             
             $this->CrudModel->createData();
-            $this->session->set_flashdata('msg','<div class="alert alert-sucess">Berhasil Menambah Data</div>');
+            $this->session->set_flashdata('msg','<div class="alert alert-success">Berhasil Menambah Data</div>');
             redirect("CrudController");
         }
     }
@@ -52,6 +52,14 @@ class CrudController extends CI_Controller {
 	public function index()
 	{
         $this->load->view('CrudViewForm');
-	}
+    }
+    
+    public function login(){
+        $this->load->view('login');
+    }
+
+    public function register(){
+        $this->load->view('register');
+    }
     
 }

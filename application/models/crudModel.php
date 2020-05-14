@@ -40,4 +40,5 @@ class CrudModel extends CI_Model {
         $this->db->delete('biodata');
     }
 
+    
 }

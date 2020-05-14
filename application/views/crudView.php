@@ -11,8 +11,20 @@
     <title>Simple Crud-App</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary">
-    <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand mb-01 h1" href="#">Simple CrudApp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <span class="navbar-text">
+          Welcome User
+        </span>
+        <br></br>
+        <a class="btn btn-danger btn-sm" href="#" role="button">Logout</a>
+      </div>
     </nav>
     <br></br>
     <div class="container">
