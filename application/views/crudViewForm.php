@@ -11,9 +11,19 @@
     <title>Fill Your Data</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary">
-      <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand mb-01 h1">Simple CrudApp</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <span class="navbar-text">
+           Welcome User
+          </span>
+          <br></br>
+          <a href="<?= base_url('Auth/logout')?>" class="btn btn-danger btn-sm">Logout</a>
+      </div>
     </nav>
+    <br></br>
     <br></br>
     <div class="container">
       <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>

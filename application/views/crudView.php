@@ -20,11 +20,12 @@
           Welcome User
         </span>
         <br></br>
-        <a href="<?= base_url('CrudController/logout')?>" class="btn btn-danger btn-sm">Logout</a>
+        <a href="<?= base_url('Auth/logout')?>" class="btn btn-danger btn-sm">Logout</a>
       </div>
     </nav>
     <br></br>
     <div class="container">
+      <?= $this->session->flashdata('message'); ?>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -48,7 +49,7 @@
                 <?php } ?>
             </tbody>
     </table>
-    <a class="btn btn-warning" href="<?php echo site_url('CrudController');?>" >Tambah Data Lainnya</a>
+    <a class="btn btn-warning" href="<?php echo site_url('CrudController/add');?>" >Tambah Data Lainnya</a>
     </div>
   </body>
 </html>

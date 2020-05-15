@@ -8,11 +8,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Edit Data</title>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary">
-    <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand mb-01 h1">Simple CrudApp</a>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <span class="navbar-text">
+          Welcome User
+        </span>
+        <br></br>
+        <a href="<?= base_url('Auth/logout')?>" class="btn btn-danger btn-sm">Logout</a>
+      </div>
     </nav>
     <br></br>
     <div class="container">

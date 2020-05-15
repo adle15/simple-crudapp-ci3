@@ -13,13 +13,13 @@
   <body>
     <nav class="navbar navbar-dark bg-primary">
       <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
-      <a class="btn btn-danger" href="<?php echo site_url('CrudController/login')?>">Login</a>
+      <a class="btn btn-danger" href="<?php echo site_url('Auth/login')?>">Login</a>
     </nav>
     <br></br>
     <div class="container">
       <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
       <?php echo $this->session->flashdata('msg'); ?>
-      <form method="post" action="<?php echo site_url('CrudController/regist')?>">
+      <form method="post" action="<?php echo site_url('Auth/regist')?>">
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
           <input type="text" class="form-control" name="email">
