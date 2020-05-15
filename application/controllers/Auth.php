@@ -53,8 +53,8 @@ class Auth extends CI_Controller{
     }
 
     public function regist(){
-        $this->form_validation->set_rules('email','Email','required');
-        $this->form_validation->set_rules('nim','Nomor Induk Mahasiswa','required');
+        $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[user.email]');
+        $this->form_validation->set_rules('nim','Nomor Induk Mahasiswa','required|is_unique[user.nim]');
         $this->form_validation->set_rules('nama','Nama Lengkap','required');
         $this->form_validation->set_rules('password','Password','required');
 
