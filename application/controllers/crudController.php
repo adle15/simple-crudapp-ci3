@@ -6,6 +6,10 @@ class CrudController extends CI_Controller {
     public function __construct(){
         parent:: __construct();
         $this->load->model('CrudModel');
+        if(! $this->session->userdata('logged_in')){
+            $this->session->set_flashdata('message_log','<div class="alert alert-danger role="alert">You Must Login First</div>');
+            redirect('Auth/login');
+        }
     }
 
     public function add(){
@@ -51,12 +55,10 @@ class CrudController extends CI_Controller {
             $this->session->set_flashdata('msg','<div class="alert alert-success">Berhasil Menambah Data</div>');
             redirect("CrudController");
         }
-    }
+    }    
 
-	public function index()
-	{
-        $this->load->view('login/login');
+    public function index(){
+        $this->load->view('CrudView');
     }
-    
     
 }
