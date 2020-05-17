@@ -11,8 +11,8 @@
     <title>Edit Data</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand mb-01 h1">Simple CrudApp</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand mb-0 h1">Simple CrudApp</a>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
         </ul>

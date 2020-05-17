@@ -11,9 +11,9 @@
     <title>Login To Your Account</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-primary">
-        <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
-        <a class="btn btn-danger" href="<?php echo site_url('Auth/register')?>" role="button">Register</a>
+    <nav class="navbar navbar-dark bg-primary">
+      <span class="navbar-brand mb-0 h1">Simple Crud-Application</span>
+      <a class="btn btn-danger" href="<?php echo site_url('Auth/register')?>">Register</a>
     </nav>
     <br></br>
     <div class="container">

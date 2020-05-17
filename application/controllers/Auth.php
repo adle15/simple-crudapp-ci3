@@ -23,10 +23,13 @@ class Auth extends CI_Controller{
 
         else{
             $email  =   $this->input->post('email');
-            $password   =   $this->input->post('password');
+            $password   =   $this->input->post("password", true);
+            $dataval = array (
+                'password' => hash('sha256', $password),
+            );
             $auth   =   $this->db->get_where('user',['email'=> $email])->row_array();
             if($auth){
-                if($password==$auth['password']){
+                if($dataval['password']==$auth['password']){
                     $data=[
                         'email' => $auth['email'],
                         'logged_in' => TRUE
@@ -49,7 +52,11 @@ class Auth extends CI_Controller{
     }
 
     function logout(){
-        $this->session->unset_userdata('email');
+        
+        unset(
+            $_SESSION['email'],
+            $_SESSION['logged_in']
+        );
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert">Successfully Logout</div>');
         redirect('Auth/login');
     }
