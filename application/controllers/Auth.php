@@ -59,8 +59,8 @@ class Auth extends CI_Controller{
     }
 
     public function regist(){
-        $this->form_validation->set_rules('email','Email','required|valid_email|callback_email');
-        $this->form_validation->set_rules('nim','Nomor Induk Mahasiswa','required|callback_nim|max_length[10]');
+        $this->form_validation->set_rules('email','Email','required|valid_email|is_unique[user.email]',array('is_unique' => 'Email %s Telah Terdaftar'));
+        $this->form_validation->set_rules('nim','Nomor Induk Mahasiswa','required|is_unique[user.nim]|max_length[10]',array('is_unique' => 'NIM %s Telah Terdaftar'));
         $this->form_validation->set_rules('nama','Nama Lengkap','required');
         $this->form_validation->set_rules('password','Password','required|min_length[6]');
 
@@ -76,24 +76,5 @@ class Auth extends CI_Controller{
             redirect("Auth/register");
         }
     }
-
-    public function email(){
-        $result   =   $this->CrudModel->validateuser();
-        if($result == TRUE){
-            return TRUE;
-        }else {
-            $this->session->set_flashdata('mess','<div class="alert alert-danger">Email Sudah Terdaftar</div>');
-        }
-    }
-
-    public function nim(){
-        $result =   $this->CrudModel->validateusernim();
-        if($result  ==  TRUE){
-            return TRUE;
-        }else {
-            $this->session->set_flashdata('mess','<div class="alert alert-danger">NIM Sudah Terdaftar</div>');
-        }
-    }
-
 
 }

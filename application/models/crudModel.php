@@ -41,35 +41,15 @@ class CrudModel extends CI_Model {
     }
 
     function createDatauser(){
+        $password = $this->input->post("password", true);
+
         $data = array (
             'email' => $this->input->post('email'),
             'nim' => $this->input->post('nim'),
             'nama' => $this->input->post('nama'),
-            'password' => ($this->input->post('password'))
+            'password' => hash('sha256', $password),
         );
         $this->db->insert('user', $data);
-    }
-
-    public function validateuser(){
-        $this->db->select('email');
-        $query  =   $this->db->get('user');
-
-        if($query->num_rows()==1){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
-    }
-
-    public function validateusernim(){
-        $this->db->select('nim');
-        $query  =   $this->db->get('user');
-
-        if($query->num_rows()==1){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
     }
 
 }
